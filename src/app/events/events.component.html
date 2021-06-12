@@ -1,0 +1,12 @@
+<h2>Events</h2>
+<div id="container">
+<table>
+    <tr #scrollMe [scrollTop]="scrollMe.scrollHeight" *ngFor = "let event of Events" 
+    [ngStyle] = "{'background-color' : event.index === counter && show === true  ? 'red' : 'white' }">
+      <td >{{event.description}}</td>
+      <td >{{event.index}}</td>
+      <td >{{event.type}}</td>
+    </tr>
+</table>
+</div>
+<button (click)="Play()">Play</button> 
