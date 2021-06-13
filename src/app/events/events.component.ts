@@ -53,22 +53,20 @@ export class EventsComponent implements OnInit {
       "index": 8,
       "type": 0,
       "description": "Click event"
+    }
+  ]
+
+  logoType = [
+    {"src" : "assets/svg/click.svg",
+    "type" : 0},
+    {
+      "src":"assets/svg/scroll.svg",
+      "type": 2
     },
     {
-      "index": 9,
-      "type": 0,
-      "description": "Click event"
-    },
-    {
-      "index": 10,
-      "type": 0,
-      "description": "Click event"
-    },
-    {
-      "index": 11,
-      "type": 0,
-      "description": "Click event"
-    },
+      "src": "assets/svg/visit.svg",
+      "type": 1
+    }
   ]
 counter = -1;
 show = false;
@@ -82,7 +80,7 @@ show = false;
     this.show = true;
     setInterval(() => {
       this.counter = this.counter +1; 
-      document.getElementById("container")?.scrollBy(0,10);
+      document.getElementById("container")?.scrollBy(0,100);
       }, 1000);
           
   }

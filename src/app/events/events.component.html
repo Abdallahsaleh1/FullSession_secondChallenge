@@ -1,12 +1,30 @@
 <h2>Events</h2>
-<div id="container">
-<table>
-    <tr #scrollMe [scrollTop]="scrollMe.scrollHeight" *ngFor = "let event of Events" 
-    [ngStyle] = "{'background-color' : event.index === counter && show === true  ? 'red' : 'white' }">
-      <td >{{event.description}}</td>
-      <td >{{event.index}}</td>
-      <td >{{event.type}}</td>
-    </tr>
-</table>
+
+<div id="container" >
+  <br>
+<div class="card" *ngFor = "let event of Events" >
+  <div class="contain" >
+    <div class="logo" [ngStyle] = "{'background-color' : event.index === counter && show === true  ? '#606368' : 'white' }" >
+      <img *ngIf = "0 == event.type" src="assets/svg/click.svg" style="height: 40px;">
+      <img *ngIf = "1 == event.type" src="assets/svg/visit.svg" style="height: 40px;">
+      <img *ngIf = "2 == event.type" src="assets/svg/scroll.svg" style="height: 40px;">
+    </div>
+    
+    <div class="description" [ngStyle] = "{'background-color' : event.index === counter && show === true  ? '#606368' : 'white' }">
+      
+      <p>{{event.description}}</p>
+      
+    </div>
+    <div class="index" [ngStyle] = "{'background-color' : event.index === counter && show === true  ? '#606368' : 'white' }">
+      
+      <p>{{event.index}}</p>
+      
+    </div>
+  </div>
+  <span style="height: 1px;">&nbsp;</span>
 </div>
-<button (click)="Play()">Play</button> 
+<span>&nbsp;</span>
+</div>
+
+<br>
+<button  class="button button2" (click)="Play()">Play</button> 
